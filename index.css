@@ -1,0 +1,51 @@
+button{
+    border: 2px solid black ;
+    border-radius: 5px;
+}
+h2{
+    display: inline-block;
+}
+#bold{
+    background-color: rgb(56, 227, 105);
+    font-size:20px;
+}
+#ita{
+    background-color: coral;
+    font-size:20px;
+}
+#under{
+   background-color: dodgerblue;
+   font-size:20px;
+}
+#decre{
+    background-color: cyan;
+    font-size:20px;
+}
+#incre{
+    background-color: rgb(226, 37, 176);
+    font-size:20px;
+}
+input{
+    background: 2px solid black;
+    border-radius: 5px;
+}
+input[type=number]
+{
+   font-size: 20px;
+   width:4%;
+}
+.container{
+    width: 100%;
+}
+.text{
+    border:2px solid red;
+    font-size: 20px;
+    padding: 10px 10px 10px 10px;
+}
+.choices{
+    border:2px solid red;
+    padding: 10px 10px 10px 10px;
+}
+span{
+    margin:10px 10px 10px 10px;
+}

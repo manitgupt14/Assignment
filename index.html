@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Zevi | Problem 1</title>
+</head>
+<script>
+    // Initialising the initial conditions of the text
+    var val_font_size=[20,20,20,20];
+    var isbold=[false,false,false,false];
+    var isitalic=[false,false,false,false];
+    var isunderlined=[false,false,false,false];
+
+    // Function to increase the font size
+     function increase(classname)
+     {
+          var poi=classname[4];
+          val_font_size[poi]+=1;
+          var colid="fontsize" + poi;
+          document.getElementById(colid).innerText=val_font_size[poi];
+          pre=document.getElementsByClassName(classname);
+          result = val_font_size[poi] +"px";
+          pre[0].style.fontSize=result;
+     }
+
+     // Function to decrease the font size
+     function decrease(classname)
+     {
+         var poi=classname[4];
+         val_font_size[poi]-=1;
+         var colid="fontsize" + poi;
+         document.getElementById(colid).innerText=val_font_size[poi];
+         pre=document.getElementsByClassName(classname);
+          result = val_font_size[poi] +"px";
+          pre[0].style.fontSize=result;
+     }
+
+     // Function to make sentence bold
+     function makebold(classname)
+     {
+        var poi=classname[4];
+         if(isbold[poi]==false)
+         {
+            pre=document.getElementsByClassName(classname);
+            pre[0].style.fontWeight="bold";
+            isbold[poi]=true;
+         }
+         else{
+            pre=document.getElementsByClassName(classname);
+            pre[0].style.fontWeight="normal";
+            isbold[poi]=false;
+         }
+     }
+
+     // Function to make sentence italic
+     function makeitalic(classname)
+     {
+        var poi=classname[4];
+        if(isitalic[poi]==false)
+        {
+            pre=document.getElementsByClassName(classname);
+            pre[0].style.fontStyle="italic";
+            isitalic[poi]=true;
+        }
+        else{
+            pre=document.getElementsByClassName(classname);
+            pre[0].style.fontStyle="normal";
+            isitalic[poi]=false;
+         }
+     }
+
+     // Function to make sentence underlined
+     function markaunderline(classname)
+     {
+        var poi=classname[4];
+        if(isunderlined[poi]==false)
+        {
+            pre=document.getElementsByClassName(classname);
+            pre[0].style.textDecoration="underline";
+            isunderlined[poi]=true;
+        }
+        else{
+            pre=document.getElementsByClassName(classname);
+            pre[0].style.textDecoration="none";
+            isunderlined[poi]=false;
+         }
+     }
+     // Function to change color of sentence
+     function fillcolor(classname)
+     {
+        var idcol="#txtcol" + classname[4];
+        var val=document.querySelector(idcol).value;
+        pre=document.getElementsByClassName(classname);
+        pre[0].style.color=val;
+     }
+
+</script>
+<body>
+    <div class="container">
+        // Row 1
+        <div class="row1">
+             <span class="choices">
+                 <button id="bold" onclick="makebold('text0')">Bold</button>
+                 <button id="ita" onclick="makeitalic('text0')">Italic</button>
+                 <button id="under" onclick="markaunderline('text0')">Underline</button>
+                 <button id="decre" onclick="decrease('text0')">-</button>
+                 <h2 id="fontsize0" class="fonts">20</h2>
+                 <button id="incre" onclick="increase('text0')">+</button>
+                 <input type="color" name="" id="txtcol0" onchange="fillcolor('text0')">
+             </span>
+             <span class="text0">
+                 This is the sentence.
+             </span>
+        </div>
+        //Row 2
+        <div class="row2">
+            <span class="choices">
+                <button id="bold" onclick="makebold('text1')">Bold</button>
+                <button id="ita" onclick="makeitalic('text1')">Italic</button>
+                <button id="under" onclick="markaunderline('text1')">Underline</button>
+                <button id="decre" onclick="decrease('text1')">-</button>
+                <h2 id="fontsize1" class="fonts">20</h2>
+                <button id="incre" onclick="increase('text1')">+</button>
+                <input type="color" name="" id="txtcol1" onchange="fillcolor('text1')">
+            </span>
+            <span class="text1">
+                This is the sentence.
+            </span>
+       </div>
+       // Row 3
+        <div class="row3">
+             <span class="choices">
+                 <button id="bold" onclick="makebold('text2')">Bold</button>
+                 <button id="ita" onclick="makeitalic('text2')">Italic</button>
+                 <button id="under" onclick="markaunderline('text2')">Underline</button>
+                 <button id="decre" onclick="decrease('text2')">-</button>
+                 <h2 id="fontsize2" class="fonts">20</h2>
+                 <button id="incre" onclick="increase('text2')">+</button>
+                 <input type="color" name="" id="txtcol2" onchange="fillcolor('text2')">
+             </span>
+             <span class="text2">
+                 This is the sentence.
+             </span>
+        </div>
+        // Row 4
+        <div class="row4">
+            <span class="choices">
+                <button id="bold" onclick="makebold('text3')">Bold</button>
+                <button id="ita" onclick="makeitalic('text3')">Italic</button>
+                <button id="under" onclick="markaunderline('text3')">Underline</button>
+                <button id="decre" onclick="decrease('text3')">-</button>
+                <h2 id="fontsize3" class="fonts">20</h2>
+                <button id="incre" onclick="increase('text3')">+</button>
+                <input type="color" name="" id="txtcol3" onchange="fillcolor('text3')">
+            </span>
+            <span class="text3">
+                This is the sentence.
+            </span>
+       </div>         
+    </div>
+</body>
+</html>
